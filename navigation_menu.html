@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Card</title>
+    <body>
+
+    <div class="profile-card">
+
+        <img src="shivani_pal.png" alt="Student Photo">
+
+        <div class="name">Shivani Pal</div>
+        <div class="course">B.Tech 1st Year — ELCE</div>
+
+        <!-- Flexbox row for extra details -->
+        <div class="details">
+            <div>
+                <strong>19</strong><br>Age
+            </div>
+            <div>
+                <strong>87%</strong><br>12th Marks
+            </div>
+            <div>
+                <strong>ABESEC</strong><br>College
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 40px;
+
+            /* Center the card using flexbox */
+            display: flex;
+            justify-content: center;     /* centers horizontally */
+            align-items: center;         /* centers vertically */
+            height: 100vh;               /* full page height */
+        }
+
+        /* Profile Card */
+        .profile-card {
+            background: white;
+            width: 350px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+            display: flex;
+            flex-direction: column;      /* items arranged in column */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Profile Image */
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;          /* circular image */
+            border: 3px solid #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* Name */
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        /* Course info */
+        .course {
+            color: gray;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        /* Flexbox row for details */
+        .details {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;   /* spread items */
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .details div {
+            background: #f0f0f0;
+            padding: 10px 15px;
+            border-radius: 8px;
+            text-align: center;
+            width: 30%;
+        }
+    </style>
+</head>
+</html>
