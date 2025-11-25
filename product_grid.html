@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Responsive Product Grid</title>
+  <style>
+    /* ---------- Variables & base ---------- */
+    :root{
+      --bg: #f6f7fb;
+      --card: #ffffff;
+      --accent: #1f67ff;
+      --muted: #6b7280;
+      --border: #e6e9f2;
+      --radius: 12px;
+      --gap: 18px;
+      --max-w: 1200px;
+      --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+
+    /* Reset / base */
+    *{box-sizing: border-box}
+    html,body{height:100%; margin:0; font-family:var(--font); background:var(--bg); color:#0f172a}
+    img{display:block; max-width:100%; height:auto}
+
+    /* Page container */
+    .page {
+      max-width: var(--max-w);
+      margin: 28px auto;
+      padding: 16px;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    header h1{font-size:1.25rem; margin:0}
+    .controls { display:flex; gap:10px; align-items:center; }
+
+    /* Grid wrapper */
+    .products {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); /* default mobile */
+      gap: var(--gap);
+    }
+
+    /* Product card */
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius: var(--radius);
+      overflow:hidden;
+      display:flex;
+      flex-direction:column;
+      min-height: 320px;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .card:hover{ transform: translateY(-6px); box-shadow: 0 14px 30px rgba(15,23,42,0.08); }
+
+    /* Image area */
+    .card .media{
+      width:100%;
+      height: 200px;            /* explicit height */
+      background: linear-gradient(135deg,#f4f6fb,#fff);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+    }
+    .card .media img{ width:100%; height:100%; object-fit:cover; }
+
+    /* Card body */
+    .card-body{
+      padding: 14px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      flex:1;
+    }
+    .title{
+      font-size:1rem;
+      font-weight:700;
+      margin:0;
+    }
+    .desc{
+      color:var(--muted);
+      font-size:0.9rem;
+      line-height:1.4;
+      margin:0;
+      flex:1;
+    }
+
+    /* Price and actions row */
+    .meta{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-top:6px;
+    }
+    .price{ font-weight:800; font-size:1.05rem; color:#0f172a }
+    .old{ font-weight:500; color:var(--muted); text-decoration:line-through; font-size:0.9rem; margin-left:8px; }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      margin-top:8px;
+    }
+    .btn{
+      padding:8px 10px;
+      border-radius:8px;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+      font-size:0.9rem;
+    }
+    .btn-primary{ background:var(--accent); color:white; }
+    .btn-outline{ background:transparent; color:var(--accent); border:1px solid var(--accent); }
+
+    /* Utility: center text small */
+    .center { text-align:center; }
+
+    /* ---------- BREAKPOINTS ---------- */
+    /* small phones: 1 column (default) */
+
+    /* Tablet: 2 columns */
+    @media (min-width: 600px){
+      .products{ grid-template-columns: repeat(2, 1fr); }
+      .card .media{ height:180px; }
+    }
+
+    /* Desktop: 3 columns */
+    @media (min-width: 900px){
+      .products{ grid-template-columns: repeat(3, 1fr); }
+      .card .media{ height:170px; }
+    }
+
+    /* Large desktop / wide: 4 columns */
+    @media (min-width: 1200px){
+      .products{ grid-template-columns: repeat(4, 1fr); }
+      .card .media{ height:160px; }
+    }
+
+    /* Small accessibility/focus */
+    .btn:focus, .card:focus { outline: none; box-shadow: 0 0 0 4px rgba(31,103,255,0.08); }
+
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Product Grid — Responsive Layout</h1>
+      <div class="controls">
+        <label for="sort" style="font-size:0.9rem;color:var(--muted)">Sort:</label>
+        <select id="sort" style="padding:6px;border-radius:6px;border:1px solid var(--border)">
+          <option>Popular</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Products grid -->
+    <section class="products" aria-label="Products">
+      <!-- Example card (repeat similar blocks for more products) -->
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="headphone.png" alt="Product 1">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Wireless Headphones🎧</h2>
+          <p class="desc">Comfortable fit, clear sound and long battery life — great for study and travel.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹2,299</span>
+              <span class="old">₹3,199</span>
+            </div>
+            <div class="center">★ 4.7</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" aria-label="Add Wireless Headphones to cart">Add</button>
+            <button class="btn btn-outline" aria-label="View Wireless Headphones">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="bluetooth _speaker.png" alt="Product 2">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Bluetooth Speaker🔊</h2>
+          <p class="desc">Portable speaker with deep bass and water resistance for outdoor use.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹1,499</span>
+            </div>
+            <div class="center">★ 4.5</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="smart _watch.webp" alt="Product 3">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Smartwatch⌚️</h2>
+          <p class="desc">Fitness tracking, notifications and all-day battery on a sleek display.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹3,899</span>
+              <span class="old">₹4,499</span>
+            </div>
+            <div class="center">★ 4.6</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="laptop sleeve.png" alt="Product 4">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Laptop Sleeve💼</h2>
+          <p class="desc">Slim, padded sleeve to protect laptops up to 15.6 inches.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹699</span>
+            </div>
+            <div class="center">★ 4.4</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Add more product cards as needed -->
+    </section>
+  </div>
+</body>
+</html>
