@@ -4,6 +4,110 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Responsive Product Grid</title>
+  <body>
+  <div class="page">
+    <header>
+      <h1>Product Grid — Responsive Layout</h1>
+      <div class="controls">
+        <label for="sort" style="font-size:0.9rem;color:var(--muted)">Sort:</label>
+        <select id="sort" style="padding:6px;border-radius:6px;border:1px solid var(--border)">
+          <option>Popular</option>
+          <option>Price: Low to High</option>
+          <option>Price: High to Low</option>
+        </select>
+      </div>
+    </header>
+
+    <!-- Products grid -->
+    <section class="products" aria-label="Products">
+      <!-- Example card (repeat similar blocks for more products) -->
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="headphone.png" alt="Product 1">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Wireless Headphones🎧</h2>
+          <p class="desc">Comfortable fit, clear sound and long battery life — great for study and travel.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹2,299</span>
+              <span class="old">₹3,199</span>
+            </div>
+            <div class="center">★ 4.7</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary" aria-label="Add Wireless Headphones to cart">Add</button>
+            <button class="btn btn-outline" aria-label="View Wireless Headphones">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="bluetooth _speaker.png" alt="Product 2">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Bluetooth Speaker🔊</h2>
+          <p class="desc">Portable speaker with deep bass and water resistance for outdoor use.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹1,499</span>
+            </div>
+            <div class="center">★ 4.5</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="smart _watch.webp" alt="Product 3">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Smartwatch⌚️</h2>
+          <p class="desc">Fitness tracking, notifications and all-day battery on a sleek display.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹3,899</span>
+              <span class="old">₹4,499</span>
+            </div>
+            <div class="center">★ 4.6</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" tabindex="0">
+        <div class="media">
+          <img src="laptop sleeve.png" alt="Product 4">
+        </div>
+        <div class="card-body">
+          <h2 class="title">Laptop Sleeve💼</h2>
+          <p class="desc">Slim, padded sleeve to protect laptops up to 15.6 inches.</p>
+          <div class="meta">
+            <div>
+              <span class="price">₹699</span>
+            </div>
+            <div class="center">★ 4.4</div>
+          </div>
+          <div class="actions">
+            <button class="btn btn-primary">Add</button>
+            <button class="btn btn-outline">View</button>
+          </div>
+        </div>
+      </article>
+      </head>
+        </body>
+
+      <!-- Add more product cards as needed -->
+    </section>
+  </div>
   <style>
     /* ---------- Variables & base ---------- */
     :root{
@@ -148,108 +252,5 @@
     .btn:focus, .card:focus { outline: none; box-shadow: 0 0 0 4px rgba(31,103,255,0.08); }
 
   </style>
-</head>
-<body>
-  <div class="page">
-    <header>
-      <h1>Product Grid — Responsive Layout</h1>
-      <div class="controls">
-        <label for="sort" style="font-size:0.9rem;color:var(--muted)">Sort:</label>
-        <select id="sort" style="padding:6px;border-radius:6px;border:1px solid var(--border)">
-          <option>Popular</option>
-          <option>Price: Low to High</option>
-          <option>Price: High to Low</option>
-        </select>
-      </div>
-    </header>
 
-    <!-- Products grid -->
-    <section class="products" aria-label="Products">
-      <!-- Example card (repeat similar blocks for more products) -->
-      <article class="card" tabindex="0">
-        <div class="media">
-          <img src="headphone.png" alt="Product 1">
-        </div>
-        <div class="card-body">
-          <h2 class="title">Wireless Headphones🎧</h2>
-          <p class="desc">Comfortable fit, clear sound and long battery life — great for study and travel.</p>
-          <div class="meta">
-            <div>
-              <span class="price">₹2,299</span>
-              <span class="old">₹3,199</span>
-            </div>
-            <div class="center">★ 4.7</div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-primary" aria-label="Add Wireless Headphones to cart">Add</button>
-            <button class="btn btn-outline" aria-label="View Wireless Headphones">View</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" tabindex="0">
-        <div class="media">
-          <img src="bluetooth _speaker.png" alt="Product 2">
-        </div>
-        <div class="card-body">
-          <h2 class="title">Bluetooth Speaker🔊</h2>
-          <p class="desc">Portable speaker with deep bass and water resistance for outdoor use.</p>
-          <div class="meta">
-            <div>
-              <span class="price">₹1,499</span>
-            </div>
-            <div class="center">★ 4.5</div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-primary">Add</button>
-            <button class="btn btn-outline">View</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" tabindex="0">
-        <div class="media">
-          <img src="smart _watch.webp" alt="Product 3">
-        </div>
-        <div class="card-body">
-          <h2 class="title">Smartwatch⌚️</h2>
-          <p class="desc">Fitness tracking, notifications and all-day battery on a sleek display.</p>
-          <div class="meta">
-            <div>
-              <span class="price">₹3,899</span>
-              <span class="old">₹4,499</span>
-            </div>
-            <div class="center">★ 4.6</div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-primary">Add</button>
-            <button class="btn btn-outline">View</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="card" tabindex="0">
-        <div class="media">
-          <img src="laptop sleeve.png" alt="Product 4">
-        </div>
-        <div class="card-body">
-          <h2 class="title">Laptop Sleeve💼</h2>
-          <p class="desc">Slim, padded sleeve to protect laptops up to 15.6 inches.</p>
-          <div class="meta">
-            <div>
-              <span class="price">₹699</span>
-            </div>
-            <div class="center">★ 4.4</div>
-          </div>
-          <div class="actions">
-            <button class="btn btn-primary">Add</button>
-            <button class="btn btn-outline">View</button>
-          </div>
-        </div>
-      </article>
-
-      <!-- Add more product cards as needed -->
-    </section>
-  </div>
-</body>
 </html>
